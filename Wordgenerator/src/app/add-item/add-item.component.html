@@ -1,0 +1,11 @@
+<div class="mb-3">
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text">New Word:</span>
+    </div>
+    <input type="text" [(ngModel)]="newTodoText" (keyup.enter)="addTodo.emit(newTodoText)" placeholder="Insert Word here" class="form-control">
+    <div class="input-group-append">
+      <button class="btn btn-primary" (click)="addTodo.emit(newTodoText)">Add Task</button>
+    </div>
+  </div>
+</div>

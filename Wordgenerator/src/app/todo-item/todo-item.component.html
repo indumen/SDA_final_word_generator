@@ -1,0 +1,15 @@
+<div>
+  <span> {{todo.task}} </span>
+  <span *ngIf="todo.isCompleted">
+    <button class="btn btn-sm btn-warning" (click)="this.changeTodoStatus.emit(todo)">Task is not complete</button>
+  </span>
+  <span *ngIf="!todo.isCompleted">
+    <button class="btn btn-sm btn-success" (click)="this.changeTodoStatus.emit(todo)">Task is complete &#10003; </button>
+  </span>
+  <span *ngIf="!todo.isCompleted">
+    <button class="btn btn-sm btn-warning" (click)="this.setActiveTodo.emit(todo)">update</button>
+  </span>
+  <span>
+    <button class="btn btn-sm btn-danger" (click)="this.deleteTodo.emit(todo)">Delete  &#10005; </button>
+  </span>
+</div>
