@@ -59,4 +59,17 @@
     </div>
   </div>
 
+  <hr>
+
+  <h2>Words</h2>
+  <div *ngFor="let word of words">
+    <h4>
+      {{ word }}
+    </h4>
+
+    <button (click)="Delete()">
+      Delete
+    </button>
+  </div>
+
 </div>

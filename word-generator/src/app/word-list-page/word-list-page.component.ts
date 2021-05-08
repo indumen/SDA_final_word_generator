@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./word-list-page.component.css']
 })
 export class WordListPageComponent implements OnInit {
+  words = ["cat", "dog", "person"]
+
+  Delete() {
+    window.alert('The product has been deleted!');
+  }
 
   constructor() { }
 
