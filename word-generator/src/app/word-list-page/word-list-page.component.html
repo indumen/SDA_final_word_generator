@@ -1,4 +1,3 @@
-<p>word-list-page works!</p>
 <a routerLink="">Select words</a>
 <!--
 
@@ -9,3 +8,55 @@
   ** delete button
 
 -->
+<br><br>
+<div class="container">
+
+  <div class="row">
+    <div class="col-12">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Add a new word" >
+          <div class="input-group-prepend">
+            <button class="btn btn-success">OK</button>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Word</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Dog</td>
+            <td>
+            <button type="button" class="btn btn-danger ">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Cat</td>
+            <td>
+            <button type="button" class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Mouse</td>
+            <td>
+            <button type="button" class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
