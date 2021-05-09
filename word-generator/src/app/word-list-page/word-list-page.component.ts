@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./word-list-page.component.css']
 })
 export class WordListPageComponent implements OnInit {
-  words = ["cat", "dog", "person"]
+  words = [
+    {id:1, value:"cat"},
+    {id:2, value:"dog"},
+    {id:3, value:"mouse"}
+  ]
 
-  Delete() {
-    window.alert('The product has been deleted!');
+  remove(id) {
+    this.words = this.words.filter(item => item.id !== id);
+  }
+  addNew() {
+    //this.words.unshift({id: 4, value: "Test"});
+    //console.log(this.words);
+
   }
 
   constructor() { }
