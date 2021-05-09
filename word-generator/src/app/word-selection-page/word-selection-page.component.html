@@ -3,23 +3,16 @@
 <html>
     <body>
         <form>
-        <div><input type="text" name="Words" placeholder="Amount of Words?" /></div>
-        <div><input type="submit" name="submit" value="OK" /></div>
+        <div><input type="text" name="Words" placeholder="Amount of Words?" [formControl]="wordNumber" /></div>
+        <div><input type="button" name="submit" value="OK" (click)="generateWords()" /></div>
         </form>
     </body>
 </html>
 
 <a routerLink="words">Go to words list</a>
 
-<p>Your random list of words </p>
-<div>
-  <ul>
-      <li>one</li>
-      <li>two</li>
-      <li>three</li>
-  </ul>
-
-</div>
+<h3>Your random list of words </h3>
+<p>{{verb}}</p>
 
 
 <!--
