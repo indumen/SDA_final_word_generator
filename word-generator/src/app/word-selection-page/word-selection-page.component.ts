@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-word-selection-page',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./word-selection-page.component.css']
 })
 export class WordSelectionPageComponent implements OnInit {
-
+  wordNumber = new FormControl(0);
   name = 'Angular';
   verbList = ['karu', 'auto', 'kass', 'maja', 'meri'];
   verb = '';
@@ -21,5 +22,16 @@ export class WordSelectionPageComponent implements OnInit {
   updateWord () {
     this.verb = this.verbList[Math.floor(Math.random() * this.verbList.length)];
     console.log('updateWord', this.verb);
+  }
+
+  generateWords() {
+    let newWords = '';
+    const howMany = Number(this.wordNumber.value);
+
+    for (let i = 0; i < howMany; i++) {
+      newWords += ' ' + this.verbList[Math.floor(Math.random() * this.verbList.length)]
+    }
+
+    this.verb = newWords;
   }
 }
