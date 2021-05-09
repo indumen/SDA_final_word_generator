@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WordSelectionPageComponent implements OnInit {
 
-  constructor() { }
+  name = 'Angular';
+  verbList = ['karu', 'auto', 'kass', 'maja', 'meri'];
+  verb = '';
 
-  ngOnInit(): void {
+  ngOnInit () {
+    const wordWait = 2000;
+    this.verb = this.verbList[Math.floor(Math.random() * this.verbList.length)];
+    console.log(Math.random(), Math.floor(Math.random()), Math.floor(Math.random() * this.verbList.length));
+    setTimeout(() => this.updateWord(), wordWait);
   }
 
+  updateWord () {
+    this.verb = this.verbList[Math.floor(Math.random() * this.verbList.length)];
+    console.log('updateWord', this.verb);
+  }
 }
