@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { WordListService } from '../word-list.service';
 
 @Component({
   selector: 'app-word-list-page',
@@ -23,7 +25,15 @@ export class WordListPageComponent implements OnInit {
     this.inputControl.reset();
   }
 
-  constructor() { }
+  addToList(word: any) {
+    this.wordListService.addToList(word);
+    //window.alert('Your product has been added to the list!');
+  }
+
+  constructor(
+    private route: ActivatedRoute,
+    private wordListService: WordListService
+  ) { }
 
   ngOnInit(): void {
   }
