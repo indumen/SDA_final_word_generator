@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-word-list-page',
@@ -10,15 +11,16 @@ export class WordListPageComponent implements OnInit {
     {id:1, value:"cat"},
     {id:2, value:"dog"},
     {id:3, value:"mouse"}
-  ]
+  ];
+  inputControl = new FormControl();
 
   remove(id) {
     this.words = this.words.filter(item => item.id !== id);
   }
-  addNew() {
-    //this.words.unshift({id: 4, value: "Test"});
-    //console.log(this.words);
 
+  addNew() {
+    this.words.unshift({id: this.words.length+1, value: this.inputControl.value});
+    this.inputControl.reset();
   }
 
   constructor() { }
