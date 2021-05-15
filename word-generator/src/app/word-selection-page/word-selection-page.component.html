@@ -1,18 +1,35 @@
 
+
+
 <!DOCTYPE html>
+
+
+<button class="btn btn-info btn-Link" >
+  <a routerLink="words">Go to words list</a></button>
+
 <html>
     <body>
-        <form>
+
+
+<div class="container">
+
+  <div class="row" >
+    <div class="col-12">
+        <div class="input-group mb-3" >
+
         <div><input type="text" name="Words" placeholder="Amount of Words?" [formControl]="wordNumber" /></div>
-        <div><input type="button" name="submit" value="OK" (click)="generateWords()" /></div>
-        </form>
-    </body>
-</html>
+        <div class="input-group-prepend">
+        <button class="btn btn-success" (click)="generateWords()">Randomize</button>
+      </div>
+    </div>
+</div>
+</div>
 
-<a routerLink="words">Go to words list</a>
 
-<h3>Your random list of words </h3>
+
+<h5>Your random list of words </h5>
 <p>{{verb}}</p>
+
 
 
 <!--
