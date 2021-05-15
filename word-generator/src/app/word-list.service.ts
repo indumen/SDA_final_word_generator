@@ -1,22 +1,20 @@
 import { Injectable } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WordListService {
   words = [];
+  inputControl = new FormControl();
 
   addToList(word: any) {
-    this.words.push(word);
+    this.words.unshift({id: this.words.length+1, value: this.inputControl.value});
+    this.inputControl.reset();
   }
 
-  getItems() {
-    return this.words;
-  }
-
-  clearList() {
-    this.words = [];
-    return this.words;
+  removeFromList(id: any) {
+    this.words = this.words.filter(item => item.id !== id);
   }
 
   constructor() { }

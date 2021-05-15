@@ -36,7 +36,7 @@
           <tr *ngFor="let word of words" >
             <td>{{word.id}}</td>
             <td>{{word.value}}</td>
-            <td><button type="button" class="btn btn-danger" (click)="remove(word.id)">Delete</button></td>
+            <td><button type="button" class="btn btn-danger" (click)="removeFromList(word.id)">Delete</button></td>
           </tr>
         </tbody>
       </table>

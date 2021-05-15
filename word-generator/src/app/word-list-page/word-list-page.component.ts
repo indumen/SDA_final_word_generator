@@ -15,7 +15,7 @@ export class WordListPageComponent implements OnInit {
     {id:3, value:"mouse"}
   ];
   inputControl = new FormControl();
-
+/*
   remove(id) {
     this.words = this.words.filter(item => item.id !== id);
   }
@@ -23,11 +23,14 @@ export class WordListPageComponent implements OnInit {
   addNew() {
     this.words.unshift({id: this.words.length+1, value: this.inputControl.value});
     this.inputControl.reset();
-  }
+  }*/
 
   addToList(word: any) {
     this.wordListService.addToList(word);
-    //window.alert('Your product has been added to the list!');
+  }
+
+  removeFromList(word: any) {
+    this.wordListService.removeFromList(word);
   }
 
   constructor(
