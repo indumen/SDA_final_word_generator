@@ -50,7 +50,7 @@ export class WordSelectionPageComponent implements OnInit {
         1, // mitu elementi me võtame
       );
 
-      newWords += ' ' + ourNewVerb;
+      newWords += ' ' + ourNewVerb.value;
     }
 
     this.verb = newWords;
