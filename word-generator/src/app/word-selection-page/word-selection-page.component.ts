@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { WordListService } from '../word-list.service';
 
 @Component({
   selector: 'app-word-selection-page',
@@ -9,10 +10,18 @@ import { FormControl } from '@angular/forms';
 export class WordSelectionPageComponent implements OnInit {
   wordNumber = new FormControl(0);
   name = 'Angular';
-  verbList = ['karu', 'auto', 'kass', 'maja', 'meri'];
+  verbList = [];
   verb = '';
 
   ngOnInit () {
+  }
+
+  constructor(
+    private wordListService: WordListService
+  ) {
+    wordListService.words$.subscribe((newWords) => {
+      this.verbList = newWords;
+    });
   }
 
   generateWords() {
