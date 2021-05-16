@@ -38,7 +38,9 @@ export class WordListPageComponent implements OnInit {
     private route: ActivatedRoute,
     private wordListService: WordListService
   ) {
-    this.words = wordListService.words;
+    wordListService.words$.subscribe((newWords) => {
+      this.words = newWords;
+    });
   }
 
   ngOnInit(): void {
