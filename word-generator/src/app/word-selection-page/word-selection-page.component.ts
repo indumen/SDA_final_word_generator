@@ -13,15 +13,6 @@ export class WordSelectionPageComponent implements OnInit {
   verb = '';
 
   ngOnInit () {
-    const wordWait = 2000;
-    this.verb = this.verbList[Math.floor(Math.random() * this.verbList.length)];
-    console.log(Math.random(), Math.floor(Math.random()), Math.floor(Math.random() * this.verbList.length));
-    setTimeout(() => this.updateWord(), wordWait);
-  }
-
-  updateWord () {
-    this.verb = this.verbList[Math.floor(Math.random() * this.verbList.length)];
-    console.log('updateWord', this.verb);
   }
 
   generateWords() {
