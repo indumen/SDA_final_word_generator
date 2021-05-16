@@ -25,8 +25,9 @@ export class WordListPageComponent implements OnInit {
     this.inputControl.reset();
   }*/
 
-  addToList(word: any) {
-    this.wordListService.addToList(word);
+  addToList() {
+    this.wordListService.addToList({id: this.words.length+1, value: this.inputControl.value});
+    this.inputControl.reset();
   }
 
   removeFromList(word: any) {
@@ -36,7 +37,9 @@ export class WordListPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private wordListService: WordListService
-  ) { }
+  ) {
+    this.words = wordListService.words;
+  }
 
   ngOnInit(): void {
   }
